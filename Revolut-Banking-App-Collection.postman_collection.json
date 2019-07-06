@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "2c288408-f694-43a8-808e-aa913720568e",
+		"name": "Revolut-Banking-App-Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create_Account_API",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"accountHolderName\" : \"Priyank Gairola\",\r\n\t\"accountHolderAddress\" : \"Krynicka-4, Gdansk, Poland\",\r\n\t\"amount\" : 1000\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/banking/account",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"banking",
+						"account"
+					]
+				},
+				"description": "This request creates an account."
+			},
+			"response": []
+		},
+		{
+			"name": "Inquire_Account_Balance_API",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "acnNum",
+						"value": "12cbcbd0-f668-4287-98ea-6d966e5ee956",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/banking?acnNum=c955d0c4-0208-4454-9c56-197997163a39",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"banking"
+					],
+					"query": [
+						{
+							"key": "acnNum",
+							"value": "c955d0c4-0208-4454-9c56-197997163a39"
+						}
+					]
+				},
+				"description": "This API gets the balance for the given account."
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer_Between_Accounts_API",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"transferorAccount\" : \"78713d41-9cb1-459b-b78f-b2165044a604\",\n\t\"beneficiaryAccount\" : \"c955d0c4-0208-4454-9c56-197997163a39\",\n\t\"amount\" : 500\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/banking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"banking"
+					]
+				},
+				"description": "This API transfers the amount between two accounts."
+			},
+			"response": []
+		}
+	]
+}

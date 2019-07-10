@@ -1,43 +1,20 @@
 /**
- * 
+ * Model class for Transfer. 
  */
 package com.org.revolut.banking.models;
 
-/**
- * @author Priyank_Gairola
- *
- */
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@EqualsAndHashCode(callSuper = false)
+@NoArgsConstructor
 public class Transfer extends Account {
 
 	private String transferorAccount;
 	private String beneficiaryAccount;
-
-	/**
-	 * @return the transferorAccount
-	 */
-	public String getTransferorAccount() {
-		return transferorAccount;
-	}
-
-	/**
-	 * @param transferorAccount the transferorAccount to set
-	 */
-	public void setTransferorAccount(String transferorAccount) {
-		this.transferorAccount = transferorAccount;
-	}
-
-	/**
-	 * @return the beneficiaryAccount
-	 */
-	public String getBeneficiaryAccount() {
-		return beneficiaryAccount;
-	}
-
-	/**
-	 * @param beneficiaryAccount the beneficiaryAccount to set
-	 */
-	public void setBeneficiaryAccount(String beneficiaryAccount) {
-		this.beneficiaryAccount = beneficiaryAccount;
-	}
 
 }
